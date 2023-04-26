@@ -27,7 +27,7 @@ class Ellipse:
             self.set_GRS80()
         elif system_name == "WGS84":
             self.set_WGS84()
-        elif system_name == "Krasovsky":
+        elif system_name == "krasovsky":
             self.set_Krasovsky()
         else:
             raise ValueError("Unknown system name")
