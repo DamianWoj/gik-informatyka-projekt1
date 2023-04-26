@@ -41,3 +41,11 @@ if __name__ == "__main__":
                  "BL1992": [BL1992CoordinatesConverter(ellipse), [args.B, args.L]],
                  "BL2000": [BL2000CoordinatesConverter(ellipse), [args.B, args.L]],
                  "XYZ2NEU": [XYZ2NEUCoordinatesConverter(ellipse), [args.X, args.Y, args.Z, args.X0, args.Y0, args.Z0]]}
+
+
+    if args.inp is not None:
+        io = IO(mode_init[args.mode][0], args.inp, args.delimiter)
+        io.write(args.out)
+    if args.inp is None:
+        result = mode_init[args.mode][0].convert(mode_init[args.mode][1])
+        print(result)
